@@ -455,7 +455,7 @@ namespace VirtoCommerce.OrderModule.Web.Controllers.Api
 
             var invoice = _notificationManager.GetNewNotification(nameof(Invoice), null, null, "en-US");
 
-            ((Invoice)invoice).CustomerOrder = order;
+            ((Invoice)invoice).Order = order;
             _notificationTemplateResolver.ResolveTemplate(invoice);
 
             var stream = new MemoryStream();
